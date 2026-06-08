@@ -739,10 +739,10 @@ p {
 }
 
 .cv-download {
-  width: 100%;
-  margin-top: 26px;
-  opacity: 0.8;
-  cursor: not-allowed;
+  width: max-content;
+  margin-top: 24px;
+  opacity: 1;
+  cursor: pointer;
 }
 
 .cv-summary {
@@ -842,6 +842,34 @@ p {
   max-width: 680px;
   margin: 24px auto 32px;
   color: var(--muted-strong);
+}
+
+.contact-actions {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  margin-top: 28px;
+}
+
+.contact-actions .btn {
+  width: 266px;
+  min-height: 66px;
+}
+
+.linkedin-link {
+  gap: 11px;
+}
+
+.linkedin-icon {
+  width: 21px;
+  height: 21px;
+  display: block;
+  flex: 0 0 auto;
+  fill: currentColor;
 }
 
 .site-footer {
@@ -1044,6 +1072,20 @@ body.js-loaded .reveal.visible {
 
   .cv-date {
     font-size: 0.8rem;
+  }
+
+  .cv-download {
+    width: 100%;
+  }
+
+  .contact-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .contact-actions .btn {
+    width: 100%;
+    min-height: 58px;
   }
 
   .cursor-glow {
