@@ -567,7 +567,7 @@ p {
 
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 18px;
 }
 
@@ -583,7 +583,7 @@ p {
 }
 
 .project-card {
-  min-height: 310px;
+  min-height: 340px;
   padding: 28px;
   display: flex;
   flex-direction: column;
@@ -604,7 +604,7 @@ p {
 }
 
 .project-card h3 {
-  margin-top: 42px;
+  margin-top: 32px;
 }
 
 .project-card p {
@@ -1032,7 +1032,7 @@ body.js-loaded .reveal.visible {
   }
 
   .project-card {
-    min-height: 250px;
+    min-height: auto;
   }
 
   .project-card a {
