@@ -131,7 +131,7 @@ if (disabledCvDownload) {
   disabledCvDownload.addEventListener('click', (event) => {
     event.preventDefault();
   });
-});
+}
 
 // Current year in footer
 const yearElement = document.querySelector('[data-year]');
@@ -139,3 +139,67 @@ const yearElement = document.querySelector('[data-year]');
 if (yearElement) {
   yearElement.textContent = new Date().getFullYear();
 }
+
+// Project image / PDF preview modal
+const imageModal = document.querySelector('[data-image-modal]');
+const imageModalImg = document.querySelector('[data-image-modal-img]');
+const imageModalFrame = document.querySelector('[data-image-modal-frame]');
+const imageModalClose = document.querySelector('[data-image-modal-close]');
+
+function openImageModal(previewSrc, previewType = 'image') {
+  if (!imageModal || !imageModalImg || !imageModalFrame || !previewSrc) return;
+
+  imageModal.classList.add('is-open');
+  imageModal.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+
+  if (previewType === 'pdf') {
+    imageModal.classList.add('has-frame');
+    imageModalImg.src = '';
+    imageModalFrame.src = `${previewSrc}#toolbar=0&navpanes=0&scrollbar=1`;
+    return;
+  }
+
+  imageModal.classList.remove('has-frame');
+  imageModalFrame.src = '';
+  imageModalImg.src = previewSrc;
+}
+
+function closeImageModal() {
+  if (!imageModal || !imageModalImg || !imageModalFrame) return;
+
+  imageModal.classList.remove('is-open');
+  imageModal.classList.remove('has-frame');
+  imageModal.setAttribute('aria-hidden', 'true');
+  imageModalImg.src = '';
+  imageModalFrame.src = '';
+  document.body.style.overflow = '';
+}
+
+// Handle project previews with event delegation, including image and PDF previews.
+document.addEventListener('click', (event) => {
+  const previewButton = event.target.closest('[data-full-image]');
+
+  if (!previewButton) return;
+
+  event.preventDefault();
+  openImageModal(previewButton.dataset.fullImage, previewButton.dataset.fullType || 'image');
+});
+
+if (imageModalClose) {
+  imageModalClose.addEventListener('click', closeImageModal);
+}
+
+if (imageModal) {
+  imageModal.addEventListener('click', (event) => {
+    if (event.target === imageModal) {
+      closeImageModal();
+    }
+  });
+}
+
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape') {
+    closeImageModal();
+  }
+});

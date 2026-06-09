@@ -10,6 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
 
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='8' y1='8' x2='56' y2='56' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23DCA1A1'/%3E%3Cstop offset='0.55' stop-color='%238E4585'/%3E%3Cstop offset='1' stop-color='%23996666'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='18' fill='%234A4A4A'/%3E%3Ccircle cx='32' cy='32' r='23' fill='url(%23g)'/%3E%3Cpath d='M25.8 21.5v15.1c0 5.1-3.1 8.2-8.1 8.2-2.5 0-4.5-.7-6.2-2.1l2.7-5.1c1 .8 2 1.2 3.1 1.2 1.6 0 2.4-.9 2.4-2.7V21.5h6.1Zm5.4 0h9.6c6.9 0 11.6 4.4 11.6 11.4S47.7 44.3 40.8 44.3h-9.6V21.5Zm9.3 16.8c3.4 0 5.7-2.1 5.7-5.4s-2.3-5.4-5.7-5.4h-3.2v10.8h3.2Z' fill='white'/%3E%3C/svg%3E" />
   <link rel="stylesheet" href="style.css?v=evening-rose-3" />
 </head>
 <body>
@@ -17,7 +18,19 @@
 
   <header class="site-header">
     <a class="logo" href="#home" aria-label="Julia Drygalska home">
-      <span class="logo-mark">JD</span>
+      <span class="logo-mark" aria-hidden="true">
+        <svg class="logo-svg" viewBox="0 0 64 64" focusable="false" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="logoGradient" x1="8" y1="8" x2="56" y2="56" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#DCA1A1" />
+              <stop offset="0.55" stop-color="#8E4585" />
+              <stop offset="1" stop-color="#996666" />
+            </linearGradient>
+          </defs>
+          <circle cx="32" cy="32" r="30" fill="url(#logoGradient)" />
+          <path d="M25.8 21.5v15.1c0 5.1-3.1 8.2-8.1 8.2-2.5 0-4.5-.7-6.2-2.1l2.7-5.1c1 .8 2 1.2 3.1 1.2 1.6 0 2.4-.9 2.4-2.7V21.5h6.1Zm5.4 0h9.6c6.9 0 11.6 4.4 11.6 11.4S47.7 44.3 40.8 44.3h-9.6V21.5Zm9.3 16.8c3.4 0 5.7-2.1 5.7-5.4s-2.3-5.4-5.7-5.4h-3.2v10.8h3.2Z" fill="white" />
+        </svg>
+      </span>
       <span class="logo-text">Julia Drygalska</span>
     </a>
 
@@ -144,40 +157,200 @@
       </div>
 
       <div class="project-grid">
-        <article class="project-card reveal">
-          <div class="project-meta">Group Project · RAG · AI Assistant</div>
-          <h3>CeriQ AI Assistant</h3>
-          <p>
-            A secure AI-assisted application created for CERcuits to support engineers with context-aware email draft generation and an internal AI chatbot. The system uses RAG over company documents, user management, feedback workflows, AI usage insights and security-focused access control.
-          </p>
-          <a href="CeriQ_ProjectOverview.pdf" download aria-label="Download CeriQ project overview">Download overview</a>
+        <article class="project-card project-card-expanded reveal">
+          <div class="project-content">
+            <div class="project-meta">Group Project · Skill 3 · 2025–2026</div>
+            <h3>CeriQ AI Assistant</h3>
+            <p>
+              A secure AI-assisted application developed for CERcuits, a real company that came to our team with a specific business problem and product idea. The project supports engineers by generating context-aware email draft responses and providing an internal AI chatbot grounded in company documentation.
+            </p>
+
+            <div class="project-details">
+              <p><strong>Course:</strong> Skill 3</p>
+              <p><strong>Period:</strong> 2025–2026</p>
+              <p><strong>Client:</strong> CERcuits</p>
+              <p><strong>Purpose:</strong> Reduce manual email-handling workload while keeping engineers in control of AI-generated responses.</p>
+              <p><strong>Technologies &amp; tools:</strong> RAG, LLMs, vector database, document ingestion, AI chatbot, vision component for attachments, user management, analytics dashboard, role-based access control, HTTPS, bcrypt, Nginx, Docker and security tooling.</p>
+              <p><strong>My contribution:</strong> I mainly worked on the AI model implementation, response generation logic and adding support for attachments and images so the assistant could use extra context from emails and technical documents.</p>
+            </div>
+
+            <a href="CeriQ_ProjectOverview.pdf" download aria-label="Download CeriQ project overview">Download overview</a>
+          </div>
+
+          <div class="project-gallery" aria-label="CeriQ project screenshots">
+            <button class="project-image-link" type="button" data-full-image="photos/ceriq1.png" aria-label="Open CeriQ email generation screenshot in full size">
+              <img src="photos/ceriq1.png" alt="CeriQ AI Assistant email generation screenshot" />
+              <span>View full image</span>
+            </button>
+            <button class="project-image-link" type="button" data-full-image="photos/ceriq2.png" aria-label="Open CeriQ chatbot or dashboard screenshot in full size">
+              <img src="photos/ceriq2.png" alt="CeriQ AI Assistant chatbot or dashboard screenshot" />
+              <span>View full image</span>
+            </button>
+          </div>
         </article>
 
-        <article class="project-card reveal">
-          <div class="project-meta">Individual Project · Machine Learning · Streamlit</div>
-          <h3>AI Diabetes Risk Predictor</h3>
-          <p>
-            A machine learning web application that supports early diabetes risk assessment using structured medical data. The app uses a Random Forest model to return a risk level, probability score and simple explanation based on features such as glucose, BMI, blood pressure, insulin and age.
-          </p>
-          <a href="AI Diabetes Risk Predictor.pdf" download aria-label="Download AI Diabetes Risk Predictor overview">Download overview</a>
+        <article class="project-card project-card-expanded reveal">
+          <div class="project-content">
+            <div class="project-meta">Individual Project · Machine Learning · February 2026</div>
+            <h3>AI Diabetes Risk Predictor</h3>
+            <p>
+              An individual machine learning web application that demonstrates how AI can support early diabetes risk assessment using structured medical data. Users enter health-related values and the model returns a risk prediction, probability score and simple explanation of possible risk factors.
+            </p>
+
+            <div class="project-details">
+              <p><strong>Course:</strong> Personal / portfolio project</p>
+              <p><strong>Period:</strong> February 2026</p>
+              <p><strong>Client:</strong> Individual project</p>
+              <p><strong>Purpose:</strong> Show how machine learning can be applied responsibly to healthcare-related tabular data as supportive information, not as a medical diagnosis.</p>
+              <p><strong>Technologies &amp; tools:</strong> Python, pandas, scikit-learn, Streamlit, matplotlib and pickle.</p>
+              <p><strong>My contribution:</strong> I completed the full project independently, including data preprocessing, model training, GridSearchCV tuning, threshold adjustment, evaluation metrics, confusion matrix and Streamlit interface.</p>
+            </div>
+
+            <a href="AI Diabetes Risk Predictor.pdf" download aria-label="Download AI Diabetes Risk Predictor overview">Download overview</a>
+          </div>
+
+          <div class="project-gallery project-gallery-three" aria-label="AI Diabetes Risk Predictor screenshots">
+            <button class="project-image-link" type="button" data-full-image="photos/diabetes1.png" aria-label="Open AI Diabetes prediction screenshot in full size">
+              <img src="photos/diabetes1.png" alt="AI Diabetes Risk Predictor input and prediction screenshot" />
+              <span>View full image</span>
+            </button>
+            <button class="project-image-link" type="button" data-full-image="photos/diabetes2.png" aria-label="Open AI Diabetes dataset overview screenshot in full size">
+              <img src="photos/diabetes2.png" alt="AI Diabetes Risk Predictor dataset overview screenshot" />
+              <span>View full image</span>
+            </button>
+            <button class="project-image-link" type="button" data-full-image="photos/diabetes3.png" aria-label="Open AI Diabetes model insights screenshot in full size">
+              <img src="photos/diabetes3.png" alt="AI Diabetes Risk Predictor model insights screenshot" />
+              <span>View full image</span>
+            </button>
+          </div>
         </article>
 
-        <article class="project-card reveal">
-          <div class="project-meta">Group Project · Computer Vision · Sports Analytics</div>
-          <h3>Team Sports Analytics</h3>
-          <p>
-            A computer vision project for analysing tennis match videos. The system detects players and the ball with YOLOv8, maps movement onto a mini-court using homography, and visualises tracking data such as heatmaps, ball speed, distance run and zone occupancy.
-          </p>
-          <a href="Sports Analytics.pdf" download aria-label="Download Sports Analytics overview">Download overview</a>
+        <article class="project-card project-card-expanded reveal">
+          <div class="project-content">
+            <div class="project-meta">Group Project · Machine Learning · 2025</div>
+            <h3>Team Sports Analytics</h3>
+            <p>
+              A machine learning and computer vision project created for assessment purposes. The goal was to learn how video-based sports analytics works in practice by detecting players and the tennis ball, tracking movement and visualising match data in a more understandable way.
+            </p>
+
+            <div class="project-details">
+              <p><strong>Course:</strong> Machine Learning</p>
+              <p><strong>Period:</strong> 2025</p>
+              <p><strong>Client:</strong> Academic assessment project</p>
+              <p><strong>Purpose:</strong> Understand how object detection, tracking and visual analytics can be applied to sports video analysis.</p>
+              <p><strong>Technologies &amp; tools:</strong> Python, YOLOv8, computer vision, video processing, annotation tools, model training, homography and data visualisation.</p>
+              <p><strong>My contribution:</strong> I mainly worked on data annotation and model training, helping prepare the dataset and improve the object detection workflow used for the final analysis.</p>
+            </div>
+
+            <a href="Sports Analytics.pdf" download aria-label="Download Sports Analytics overview">Download overview</a>
+          </div>
+
+          <div class="project-gallery project-gallery-centered" aria-label="Sports Analytics project screenshots">
+            <button class="project-image-link" type="button" data-full-image="photos/sport1.jpeg" aria-label="Open Sports Analytics first screenshot in full size">
+              <img src="photos/sport1.jpeg" alt="Sports Analytics tracking and visualisation screenshot" />
+              <span>View full image</span>
+            </button>
+            <button class="project-image-link" type="button" data-full-image="photos/sport2.jpeg" aria-label="Open Sports Analytics second screenshot in full size">
+              <img src="photos/sport2.jpeg" alt="Sports Analytics model or analysis screenshot" />
+              <span>View full image</span>
+            </button>
+          </div>
         </article>
 
-        <article class="project-card reveal">
-          <div class="project-meta">Group Project · RAG · Multilingual AI</div>
-          <h3>Polish × Peruvian Chef Tutor</h3>
-          <p>
-            A multilingual RAG-powered cooking assistant built around private Polish, Peruvian and English recipe sources. The app uses Streamlit, LangGraph, Chroma and a local Llama model to answer recipe questions, explain steps, suggest fusion ideas and support nutrition or unit conversion tools.
-          </p>
-          <a href="Polish × Peruvian Chef Tutor.pdf" download aria-label="Download Polish Peruvian Chef Tutor overview">Download overview</a>
+        <article class="project-card project-card-expanded reveal">
+          <div class="project-content">
+            <div class="project-meta">Group Project · Machine Learning · 2025</div>
+            <h3>Polish × Peruvian Chef Tutor</h3>
+            <p>
+              A multilingual RAG-powered cooking assistant created during the same Machine Learning course. The application uses private Polish, Peruvian and English cookbook sources to answer recipe questions, explain cooking steps, suggest fusion ideas and support nutrition or unit conversion tools.
+            </p>
+
+            <div class="project-details">
+              <p><strong>Course:</strong> Machine Learning</p>
+              <p><strong>Period:</strong> 2025</p>
+              <p><strong>Client:</strong> Academic assessment project</p>
+              <p><strong>Purpose:</strong> Learn how RAG systems, vector databases and agent-based workflows can be used to build a practical multilingual AI assistant that can answer recipe questions, explain steps and suggest fusion ideas.</p>
+              <p><strong>Technologies &amp; tools:</strong> Streamlit, LangGraph, Chroma, RAG, local Llama 3.2 via Ollama, PDF ingestion, pypdf, text chunking, multilingual prompts, vector search, unit conversion and nutrition tools.</p>
+              <p><strong>My contribution:</strong> I worked mainly on the document ingestion, vector database setup, multilingual knowledge base and fusion agent. I helped prepare the recipe documents, split them into chunks, store them as searchable vectors in Chroma and support answers across Polish, Spanish and English contexts.</p>
+            </div>
+
+            <a href="Polish × Peruvian Chef Tutor.pdf" download aria-label="Download Polish Peruvian Chef Tutor overview">Download overview</a>
+          </div>
+
+          <div class="project-gallery project-gallery-centered" aria-label="Polish Peruvian Chef Tutor project screenshot">
+            <button class="project-image-link" type="button" data-full-image="photos/chef.png" aria-label="Open Polish Peruvian Chef Tutor screenshot in full size">
+              <img src="photos/chef.png" alt="Polish Peruvian Chef Tutor application screenshot" />
+              <span>View full image</span>
+            </button>
+          </div>
+        </article>
+
+        <article class="project-card project-card-expanded reveal">
+          <div class="project-content">
+            <div class="project-meta">Individual Project · Business Intelligence · 2025</div>
+            <h3>DAF Torque Dashboard</h3>
+            <p>
+              An individual Business Intelligence project created for DAF. The dashboard was designed to turn raw torque-down data from the DAF Axle Factory in Westerlo into clear insights about production performance, quality and process stability.
+            </p>
+
+            <div class="project-details">
+              <p><strong>Course:</strong> Business Intelligence</p>
+              <p><strong>Period:</strong> 2025</p>
+              <p><strong>Client:</strong> DAF</p>
+              <p><strong>Purpose:</strong> Help maintenance engineers, process quality engineers and production managers monitor torque tools, detect deviations, compare OK/NOK results and identify patterns that could affect assembly quality.</p>
+              <p><strong>Technologies &amp; tools:</strong> Qlik Sense, dashboard design, star schema modelling, KPI visualisation, filters, trend analysis, torque and angle metrics, OK/NOK quality analysis and lookup functionality.</p>
+              <p><strong>My contribution:</strong> I created the dashboard concept and functional specification, designed the data model, defined analytical questions and built dashboard views for general overview, tool-specific analysis, quality monitoring and axle lookup.</p>
+            </div>
+          </div>
+
+          <div class="project-gallery project-gallery-three" aria-label="DAF Torque Dashboard screenshots">
+            <button class="project-image-link" type="button" data-full-image="photos/bi1.jpeg" aria-label="Open DAF dashboard first screenshot in full size">
+              <img src="photos/bi1.jpeg" alt="DAF Business Intelligence dashboard general overview screenshot" />
+              <span>View full image</span>
+            </button>
+            <button class="project-image-link" type="button" data-full-image="photos/bi2.jpeg" aria-label="Open DAF dashboard second screenshot in full size">
+              <img src="photos/bi2.jpeg" alt="DAF Business Intelligence dashboard quality and torque analysis screenshot" />
+              <span>View full image</span>
+            </button>
+            <button class="project-image-link" type="button" data-full-image="photos/diabetes3.png" aria-label="Open DAF dashboard third screenshot in full size">
+              <img src="photos/diabetes3.png" alt="Additional dashboard screenshot" />
+              <span>View full image</span>
+            </button>
+          </div>
+        </article>
+
+        <article class="project-card project-card-expanded reveal">
+          <div class="project-content">
+            <div class="project-meta">Individual Project · Web Development · 2024</div>
+            <h3>BookSwap Application</h3>
+            <p>
+              A web application for exchanging books between users. The idea was to create a platform where people can upload books they no longer need, show interest in books from other users and arrange exchanges in a simple and community-focused way.
+            </p>
+
+            <div class="project-details">
+              <p><strong>Course:</strong> Web Development</p>
+              <p><strong>Period:</strong> 2024</p>
+              <p><strong>Client:</strong> Academic individual project</p>
+              <p><strong>Purpose:</strong> Build a practical full-stack application based on an original idea, using authentication, user interaction and a clear exchange workflow.</p>
+              <p><strong>Technologies &amp; tools:</strong> Laravel, Tailwind CSS, JavaScript, database models, user profiles, notifications, likes, book listings and forum functionality.</p>
+              <p><strong>My contribution:</strong> I designed and built the application independently, including the book upload flow, exchange interest system, notifications, user book selection process and forum area where users can communicate.</p>
+            </div>
+          </div>
+
+          <div class="project-gallery project-gallery-three" aria-label="BookSwap application screenshots">
+            <button class="project-image-link" type="button" data-full-image="photos/app1.png" aria-label="Open BookSwap first screenshot in full size">
+              <img src="photos/app1.png" alt="BookSwap application homepage or book listing screenshot" />
+              <span>View full image</span>
+            </button>
+            <button class="project-image-link" type="button" data-full-image="photos/app2.png" aria-label="Open BookSwap second screenshot in full size">
+              <img src="photos/app2.png" alt="BookSwap application exchange workflow screenshot" />
+              <span>View full image</span>
+            </button>
+            <button class="project-image-link" type="button" data-full-image="photos/app3.png" aria-label="Open BookSwap third screenshot in full size">
+              <img src="photos/app3.png" alt="BookSwap application forum or user interaction screenshot" />
+              <span>View full image</span>
+            </button>
+          </div>
         </article>
       </div>
     </section>
@@ -198,6 +371,50 @@
             </p>
           </div>
 
+          <div class="cv-info-group">
+            <h4>AI &amp; Data</h4>
+            <div class="cv-pill-list">
+              <span>Machine Learning</span>
+              <span>Computer Vision</span>
+              <span>Image Segmentation</span>
+              <span>LLMs</span>
+              <span>RAG Systems</span>
+              <span>Model Evaluation</span>
+              <span>Data Preprocessing</span>
+            </div>
+          </div>
+
+          <div class="cv-info-group">
+            <h4>Technical skills</h4>
+            <div class="cv-pill-list">
+              <span>Python</span>
+              <span>JavaScript</span>
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>Streamlit</span>
+              <span>Data Analysis</span>
+              <span>Documentation</span>
+            </div>
+          </div>
+
+          <div class="cv-info-group">
+            <h4>Tools &amp; frameworks</h4>
+            <div class="cv-pill-list">
+              <span>PyTorch</span>
+              <span>scikit-learn</span>
+              <span>pandas</span>
+              <span>matplotlib</span>
+              <span>Jupyter Notebook</span>
+              <span>CVAT</span>
+              <span>DVC</span>
+              <span>Git</span>
+              <span>Azure DevOps</span>
+              <span>LangChain</span>
+              <span>Chroma</span>
+              <span>Ollama</span>
+            </div>
+          </div>
+
           <div class="cv-info-group cv-education-sidebar">
             <h4>Education</h4>
             <p class="cv-sidebar-date">2022 — 2026</p>
@@ -206,36 +423,12 @@
           </div>
 
           <div class="cv-info-group">
-            <h4>Core skills</h4>
-            <div class="cv-pill-list">
-              <span>Machine Learning</span>
-              <span>Computer Vision</span>
-              <span>Image Segmentation</span>
-              <span>LLM &amp; RAG</span>
-              <span>Model Evaluation</span>
-            </div>
-          </div>
-
-          <div class="cv-info-group">
-            <h4>Tools</h4>
-            <div class="cv-pill-list">
-              <span>Python</span>
-              <span>Git</span>
-              <span>DVC</span>
-              <span>Azure DevOps</span>
-              <span>Jupyter Notebook</span>
-              <span>PyTorch</span>
-              <span>LangChain</span>
-            </div>
-          </div>
-
-          <div class="cv-info-group">
-            <h4>Soft skills</h4>
+            <h4>Professional skills</h4>
             <div class="cv-pill-list">
               <span>Analytical thinking</span>
+              <span>Problem solving</span>
               <span>Teamwork</span>
               <span>Attention to detail</span>
-              <span>Adaptability</span>
               <span>Communication</span>
             </div>
           </div>
@@ -263,10 +456,10 @@
                 <h3>R&amp;D Project Intern</h3>
                 <p class="cv-place">Qcify · Herentals</p>
                 <ul>
-                  <li>Researched and evaluated segmentation approaches to improve object separation in a nut sorting machine.</li>
-                  <li>Tested solutions to prevent overlapping nuts from being detected as a single object.</li>
-                  <li>Worked with Azure, Git, DVC and CVAT to support experimentation and dataset management.</li>
-                  <li>Created scripts for metrics tracking, result visualization and model performance analysis.</li>
+                  <li>Researched and evaluated lightweight segmentation approaches for almond declustering in the Qcify AIR vision pipeline.</li>
+                  <li>Prepared datasets with boundary masks and distance maps, then trained and compared ESPNetV2 and FBSNet experiments.</li>
+                  <li>Used IoU, object-counting metrics, merge/split rates, runtime measurements and visual inspection to evaluate results.</li>
+                  <li>Worked with Python, PyTorch, Jupyter Notebook, CVAT, DVC, Git and Azure DevOps to support reproducible R&amp;D experimentation.</li>
                 </ul>
               </div>
             </article>
@@ -277,10 +470,8 @@
                 <h3>Student Job — Pub Staff</h3>
                 <p class="cv-place">Irish Pub · Geel, Belgium</p>
                 <ul>
-                  <li>Worked as a bartender and waitress.</li>
-                  <li>Opened the pub and helped prepare daily operations before service.</li>
-                  <li>Handled money responsibly, counted cash and supported closing-related duties.</li>
-                  <li>Developed reliability, communication skills, independence and responsibility in a fast-paced environment.</li>
+                  <li>Worked part-time alongside my studies in a fast-paced hospitality environment.</li>
+                  <li>Developed responsibility, communication, teamwork and independence through customer service, opening duties and cash handling.</li>
                 </ul>
               </div>
             </article>
@@ -302,7 +493,12 @@
         </p>
 
         <div class="contact-actions">
-          <a class="btn btn-primary" href="mailto:ddrygalskajulia@gmail.com">Contact me</a>
+          <a class="btn btn-primary mail-link" href="mailto:ddrygalskajulia@gmail.com" aria-label="Send an email to Julia Drygalska">
+            <svg class="mail-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3.75 5.25h16.5c1.24 0 2.25 1.01 2.25 2.25v9c0 1.24-1.01 2.25-2.25 2.25H3.75A2.25 2.25 0 0 1 1.5 16.5v-9c0-1.24 1.01-2.25 2.25-2.25Zm0 1.8a.45.45 0 0 0-.45.45v.38l8.7 5.43 8.7-5.43V7.5a.45.45 0 0 0-.45-.45H3.75Zm16.95 2.95-8.22 5.13a.9.9 0 0 1-.96 0L3.3 10v6.5c0 .25.2.45.45.45h16.5c.25 0 .45-.2.45-.45V10Z" />
+            </svg>
+            <span>Contact me</span>
+          </a>
           <a class="btn btn-secondary linkedin-link" href="https://www.linkedin.com/in/julia-drygalska-25ba53232/" target="_blank" rel="noreferrer noopener" aria-label="Visit Julia Drygalska on LinkedIn">
             <svg class="linkedin-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
               <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.049c.476-.9 1.637-1.85 3.368-1.85 3.602 0 4.267 2.371 4.267 5.455v6.286h-.002ZM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124ZM7.119 20.452H3.554V9h3.565v11.452ZM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003Z" />
@@ -318,6 +514,11 @@
     <p>© <span data-year></span> Julia Drygalska</p>
   </footer>
 
-  <script src="script.js"></script>
+  <div class="image-modal" data-image-modal aria-hidden="true">
+    <button class="image-modal-close" type="button" data-image-modal-close aria-label="Close image preview">×</button>
+    <img src="" alt="Full size project screenshot" data-image-modal-img />
+    <iframe src="" title="Full size project preview" data-image-modal-frame></iframe>
+  </div>
+  <script src="script.js?v=image-modal-3"></script>
 </body>
 </html>
