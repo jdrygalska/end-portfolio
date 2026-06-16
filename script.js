@@ -1,7 +1,5 @@
-// Mark that JavaScript is running, so reveal animations can safely start
 document.body.classList.add('js-loaded');
 
-// Smooth scroll for navigation links
 const navLinks = document.querySelectorAll('.main-nav a, .logo, .btn[href^="#"], .project-card a[href^="#"]');
 
 navLinks.forEach((link) => {
@@ -22,7 +20,6 @@ navLinks.forEach((link) => {
   });
 });
 
-// Animated cursor glow
 let cursorGlow = document.querySelector('.cursor-glow');
 
 if (!cursorGlow) {
@@ -36,7 +33,6 @@ window.addEventListener('mousemove', (event) => {
   cursorGlow.style.top = `${event.clientY}px`;
 });
 
-// Reveal elements while scrolling
 const revealElements = document.querySelectorAll('.reveal');
 
 if ('IntersectionObserver' in window) {
@@ -72,7 +68,6 @@ window.addEventListener('load', () => {
   });
 });
 
-// Active navigation link on scroll
 const sections = document.querySelectorAll('section[id]');
 const menuLinks = document.querySelectorAll('.main-nav a');
 
@@ -99,7 +94,6 @@ window.addEventListener('scroll', updateActiveLink);
 window.addEventListener('load', updateActiveLink);
 updateActiveLink();
 
-// Subtle movement for hero decorative elements
 const floatingElements = document.querySelectorAll('.orbit, .floating-card');
 
 window.addEventListener('scroll', () => {
@@ -111,7 +105,6 @@ window.addEventListener('scroll', () => {
   });
 });
 
-// Button hover state
 const contactButtons = document.querySelectorAll('.btn');
 
 contactButtons.forEach((button) => {
@@ -124,7 +117,6 @@ contactButtons.forEach((button) => {
   });
 });
 
-// Temporary disabled CV download button
 const disabledCvDownload = document.querySelector('.cv-download[aria-disabled="true"]');
 
 if (disabledCvDownload) {
@@ -133,14 +125,12 @@ if (disabledCvDownload) {
   });
 }
 
-// Current year in footer
 const yearElement = document.querySelector('[data-year]');
 
 if (yearElement) {
   yearElement.textContent = new Date().getFullYear();
 }
 
-// Project image / PDF preview modal
 const imageModal = document.querySelector('[data-image-modal]');
 const imageModalImg = document.querySelector('[data-image-modal-img]');
 const imageModalFrame = document.querySelector('[data-image-modal-frame]');
@@ -176,7 +166,6 @@ function closeImageModal() {
   document.body.style.overflow = '';
 }
 
-// Handle project previews with event delegation, including image and PDF previews.
 document.addEventListener('click', (event) => {
   const previewButton = event.target.closest('[data-full-image]');
 
